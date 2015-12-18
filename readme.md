@@ -2,17 +2,17 @@ G Time Diff Library
 ======================================
 
 # About
-* GMem is a simple and robust template based time difference measurement library for C++.
+* GTimeDiff is a simple and robust template based time difference measurement library for C++.
 
 # Install
-* GMem consists of only header files, and it requires no library build for using.
+* GTimeDiff consists of only header files, and it requires no library build for using.
     * For Qt user(based on **QElapsedTimer**)
       * Include **gtimediff.pri**.
     * For None Qt user(based on **chrono**)
       * Just include and use header files in src folder.
 
 # Examples
-* See the following code. Suppose that it contains a critical routine that consumes too much time. You don't know which function is time comsuming. Anyway, you would like to figure out how long it takes time in each routine. In this case, GMem is a good solution for the problem.
+* See the following code. Suppose that it contains a critical routine that consumes too much time. You don't know which function is time comsuming. Anyway, you would like to figure out how long it takes time in each routine. In this case, GTimeDiff is a good solution for the problem.
 
 ```cpp
   doSometing1();
@@ -41,7 +41,7 @@ int main()
 }
 ```
 
-* Let me add a code using **GMem** module.
+* Let me add a code using **GTimeDiff** module.
 
 ```cpp
 #include <GTimeDiffChrono> // Add header file
