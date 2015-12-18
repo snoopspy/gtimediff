@@ -1,18 +1,18 @@
-VDream Performance Measurement Library
+G Time Diff Library
 ======================================
 
 # About
-* VPerformance is a simple and robust template based time difference measurement library for C++.
+* GMem is a simple and robust template based time difference measurement library for C++.
 
 # Install
-* VPerformance consists of only header files, and it requires no library build for using.
+* GMem consists of only header files, and it requires no library build for using.
     * For Qt user(based on **QElapsedTimer**)
-      * Include **vperformance.pri**.
+      * Include **gtimediff.pri**.
     * For None Qt user(based on **chrono**)
       * Just include and use header files in src folder.
 
 # Examples
-* See the following code. Suppose that it contains a critical routine that consumes too much time. You don't know which function is time comsuming. Anyway, you would like to figure out how long it takes time in each routine. In this case, VPerformance is a good solution for the problem.
+* See the following code. Suppose that it contains a critical routine that consumes too much time. You don't know which function is time comsuming. Anyway, you would like to figure out how long it takes time in each routine. In this case, GMem is a good solution for the problem.
 
 ```cpp
   doSometing1();
@@ -41,10 +41,10 @@ int main()
 }
 ```
 
-* Let me add a code using **VPerformance** module.
+* Let me add a code using **GMem** module.
 
 ```cpp
-#include <VPerformanceChrono> // Add header file
+#include <GTimeDiffChrono> // Add header file
 
 void doSomething(int msec)
 {
@@ -53,19 +53,19 @@ void doSomething(int msec)
 
 int main()
 {
-  VPerformanceChrono pfm; // Declare object of the class
+  GTimeDiff td; // Declare object of the class
   for (int i = 0; i < 10; i++)
   {
-    pfm.check(1111); // Call check everywhere you would like to check time consuming
+    td.check(1111); // Call check everywhere you would like to check time consuming
     doSomething(10);
-    pfm.check(2222);
+    td.check(2222);
     doSomething(20);
-    pfm.check(3333);
+    td.check(3333);
     doSomething(30);
-    pfm.check(4444);
+    td.check(4444);
     doSomething(40);
   }
-  pfm.report(); // Call report to see the result
+  td.report(); // Call report to see the result
 }
 ```
 
@@ -79,10 +79,15 @@ beg     end     count   elapsed      average
 4444    1111    9       360,927,856  40,103,095
 ```
 
-* For more information, see [exam](app/exam/) and [test](app/test/) codes.
+* For more information, see [app](app/) codes.
+
+# Supported Platforms
+  * Linux / g++ 4.8.4
+  * Windows / mingw 4.9.1
 
 # Author
 * [Gilbert Lee](http://www.gilgil.net)
 
 # License
 * [GNU GENERAL PUBLIC LICENSE](http://www.gnu.org/copyleft/gpl.html)
+
