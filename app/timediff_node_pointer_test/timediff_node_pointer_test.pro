@@ -1,5 +1,5 @@
 CONFIG -= qt
-CONFIG += console
-include(../../../../g.pri)
+CONFIG *= console
+include(../../gtimediff.pri)
 SOURCES += *.cpp
-DESTDIR = $${PWD}/../../../../bin
+DESTDIR = $${PWD}../../../bin

@@ -1,6 +1,6 @@
 QT -= gui
-CONFIG += console
-QMAKE_CXXFLAGS += -std=c++11
+CONFIG *= c++11
+CONFIG *= console
 win32:LIBS += -lwinmm
 SOURCES += *.cpp
-DESTDIR = $${PWD}/../../../../bin
+DESTDIR = $${PWD}../../../bin

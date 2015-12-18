@@ -1,0 +1,2 @@
+CONFIG *= c++11
+INCLUDEPATH *= $${PWD}/src
