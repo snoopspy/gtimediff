@@ -259,4 +259,6 @@ int main() {
   qelapsedtimer_msec_test();
   qelapsedtimer_nsec_test();
 #endif // QT_CORE_LIB
+
+  return 0;
 }

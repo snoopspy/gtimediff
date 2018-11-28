@@ -19,4 +19,5 @@ int main() {
     doSomething(40);
   }
   td.report();
+  return 0;
 }

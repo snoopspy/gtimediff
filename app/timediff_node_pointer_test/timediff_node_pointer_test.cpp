@@ -91,4 +91,6 @@ int main() {
 
   td.check(-1);
   td.report();
+
+  return 0;
 }
