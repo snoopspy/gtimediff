@@ -98,8 +98,8 @@ public:
     lastClock = now;
   }
 
-  virtual void report(bool autoClear = true, std::ostream* os = NULL) {
-    if (os == NULL) os = &std::cout;
+  virtual void report(bool autoClear = true, std::ostream* os = nullptr) {
+    if (os == nullptr) os = &std::cout;
     os->imbue(std::locale(""));
     *os << "beg\tend\tcount\telapsed\taverage\n";
     for (auto it = reportMap.begin(); it != reportMap.end(); it++) {

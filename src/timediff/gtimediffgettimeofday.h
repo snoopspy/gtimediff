@@ -32,7 +32,7 @@ namespace GTimeDiffGetTimeOfDay_ {
   struct Timer {
     Clock now() {
       Clock res;
-      gettimeofday(&res.tv_, NULL);
+      gettimeofday(&res.tv_, nullptr);
       return res;
     }
   };

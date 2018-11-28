@@ -59,11 +59,11 @@ void time_sec_test() {
 
 #include <sys/time.h>
 void gettimeofday_usec_test() {
-  struct timeval beg; gettimeofday(&beg, NULL);
+  struct timeval beg; gettimeofday(&beg, nullptr);
   struct timeval end;
   long diff;
   for (int i = 0; i < LOOP_CNT; i++) {
-    gettimeofday(&end, NULL);
+    gettimeofday(&end, nullptr);
     diff = (end.tv_sec - beg.tv_sec) * 1000000 + (end.tv_usec - beg.tv_usec);
   }
   std::cout << diff / 1000 << "\t" << __func__ << std::endl;
