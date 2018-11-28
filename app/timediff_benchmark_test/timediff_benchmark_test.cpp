@@ -8,7 +8,7 @@ static const int LOOP_CNT = 1000000;
 void gettickcount_msec_test() {
   DWORD beg = GetTickCount();
   DWORD end;
-  DWORD diff;
+  DWORD diff = 0;
   for (int i = 0; i < LOOP_CNT; i++) {
     end = GetTickCount();
     diff = end - beg;
@@ -37,7 +37,7 @@ void timegettime_msec_test() {
 void clock_usec_test() {
   clock_t beg = clock();
   clock_t end;
-  clock_t diff;
+  clock_t diff = 0;
   for (int i = 0; i < LOOP_CNT; i++) {
     end = clock();
     diff = end - beg;
@@ -49,7 +49,7 @@ void clock_usec_test() {
 void time_sec_test() {
   time_t beg; time(&beg);
   time_t end;
-  time_t diff;
+  time_t diff = 0;
   for (int i = 0; i < LOOP_CNT; i++) {
     time(&end);
     diff = end - beg;
@@ -61,7 +61,7 @@ void time_sec_test() {
 void gettimeofday_usec_test() {
   struct timeval beg; gettimeofday(&beg, nullptr);
   struct timeval end;
-  long diff;
+  long diff = 0;
   for (int i = 0; i < LOOP_CNT; i++) {
     gettimeofday(&end, nullptr);
     diff = (end.tv_sec - beg.tv_sec) * 1000000 + (end.tv_usec - beg.tv_usec);
@@ -73,7 +73,7 @@ void gettimeofday_usec_test() {
 void clock_gettime_nsec_test() {
   struct timespec beg; clock_gettime(CLOCK_MONOTONIC, &beg);
   struct timespec end;
-  long diff;
+  long diff = 0;
   for (int i = 0; i < LOOP_CNT; i++) {
     clock_gettime(CLOCK_MONOTONIC, &end);
     diff = (end.tv_sec - beg.tv_sec) * 1000000000 + (end.tv_nsec - beg.tv_nsec);
@@ -91,7 +91,7 @@ void system_clock_msec_test() {
 
   system_clock::time_point beg = system_clock::now();
   system_clock::time_point end;
-  milliseconds diff;
+  milliseconds diff = milliseconds(0);
   for (int i = 0; i < LOOP_CNT; i++) {
     end = system_clock::now();
     diff = duration_cast<milliseconds>(end - beg);
@@ -105,7 +105,7 @@ void system_clock_usec_test() {
 
   system_clock::time_point beg = system_clock::now();
   system_clock::time_point end;
-  microseconds diff;
+  microseconds diff = milliseconds(0);
   for (int i = 0; i < LOOP_CNT; i++) {
     end = system_clock::now();
     diff = duration_cast<microseconds>(end - beg);
@@ -119,7 +119,7 @@ void system_clock_nsec_test() {
 
   system_clock::time_point beg = system_clock::now();
   system_clock::time_point end;
-  nanoseconds diff;
+  nanoseconds diff = nanoseconds(0);
   for (int i = 0; i < LOOP_CNT; i++) {
     end = system_clock::now();
     diff = duration_cast<nanoseconds>(end - beg);
@@ -133,7 +133,7 @@ void high_resolution_clock_msec_test() {
 
   high_resolution_clock::time_point beg = high_resolution_clock::now();
   high_resolution_clock::time_point end;
-  milliseconds diff;
+  milliseconds diff = milliseconds(0);
   for (int i = 0; i < LOOP_CNT; i++) {
     end = high_resolution_clock::now();
     diff = duration_cast<milliseconds>(end - beg);
@@ -147,7 +147,7 @@ void high_resolution_clock_usec_test() {
 
   high_resolution_clock::time_point beg = high_resolution_clock::now();
   high_resolution_clock::time_point end;
-  microseconds diff;
+  microseconds diff = microseconds(0);
   for (int i = 0; i < LOOP_CNT; i++) {
     end = high_resolution_clock::now();
     diff = duration_cast<microseconds>(end - beg);
@@ -161,7 +161,7 @@ void high_resolution_clock_nsec_test() {
 
   high_resolution_clock::time_point beg = high_resolution_clock::now();
   high_resolution_clock::time_point end;
-  nanoseconds diff;
+  nanoseconds diff = nanoseconds(0);
   for (int i = 0; i < LOOP_CNT; i++) {
     end = high_resolution_clock::now();
     diff = duration_cast<nanoseconds>(end - beg);
@@ -180,7 +180,7 @@ void qtime_msec_test() {
 
   int beg = time.elapsed();
   int end;
-  int diff;
+  int diff = 0;
   for (int i = 0; i < LOOP_CNT; i++) {
     end = time.elapsed();
     diff = end - beg;
@@ -193,9 +193,9 @@ void qelapsedtimer_msec_test() {
   QElapsedTimer elapsedTimer;
   elapsedTimer.start();
 
-  quint64 beg = elapsedTimer.elapsed();
-  quint64 end;
-  quint64 diff;
+  qint64 beg = elapsedTimer.elapsed();
+  qint64 end;
+  qint64 diff = 0;
   for (int i = 0; i < LOOP_CNT; i++) {
     end = elapsedTimer.elapsed();
     diff = end - beg;
@@ -208,9 +208,9 @@ void qelapsedtimer_nsec_test() {
   QElapsedTimer elapsedTimer;
   elapsedTimer.start();
 
-  quint64 beg = elapsedTimer.nsecsElapsed();
-  quint64 end;
-  quint64 diff;
+  qint64 beg = elapsedTimer.nsecsElapsed();
+  qint64 end;
+  qint64 diff = 0;
   for (int i = 0; i < LOOP_CNT; i++) {
     end = elapsedTimer.nsecsElapsed();
     diff = end - beg;
