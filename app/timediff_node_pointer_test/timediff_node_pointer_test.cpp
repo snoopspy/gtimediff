@@ -39,7 +39,7 @@ Node* makeNode() {
 static const int LOOP_CNT = 100000000;
 
 int main() {
-  volatile Node* volatile node = makeNode();
+  volatile Node* node = makeNode();
   GTimeDiffChrono td;
 
   volatile Node node_;
