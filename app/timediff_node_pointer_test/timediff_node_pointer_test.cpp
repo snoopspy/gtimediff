@@ -36,18 +36,16 @@ Node* makeNode() {
 
 #define foo8(node) { node->next->next->next->next->next->next->next->next->value = 0; }
 
-static const int LOOP_CNT = 10000000;
+static const int LOOP_CNT = 100000000;
 
 int main() {
-  Node* node = makeNode();
+  volatile Node* volatile node = makeNode();
   GTimeDiffChrono td;
 
-  Node node_;
-  {
-    td.check(9);
-    for (int i = LOOP_CNT; i > 0; --i)
-      node_.value = 0;
-  }
+  volatile Node node_;
+  td.check(9);
+  for (int i = LOOP_CNT; i > 0; --i)
+    node_.value = 0;
 
   td.check(10);
   for (int i = LOOP_CNT; i > 0; --i)
