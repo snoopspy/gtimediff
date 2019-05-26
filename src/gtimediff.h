@@ -98,7 +98,7 @@ public:
     lastClock_ = now;
   }
 
-  virtual void report(bool autoClear = true, int div = 1000000, std::ostream* os = nullptr) {
+  virtual void report(int div = 1000000, bool autoClear = true, std::ostream* os = nullptr) {
     if (os == nullptr) os = &std::cout;
     *os << "beg\t\tend\t\tcount\t\telapsed\t\taverage\n";
     for (auto it = reportMap_.begin(); it != reportMap_.end(); it++) {
