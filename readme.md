@@ -44,7 +44,7 @@ int main()
 * Let me add a code using **GTimeDiff** module.
 
 ```cpp
-#include <GTimeDiffChrono> // Add header file
+#include <gtimediffchrono.h> // Add header file
 
 void doSomething(int msec)
 {
