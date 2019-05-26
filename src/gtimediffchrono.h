@@ -37,7 +37,7 @@ typedef GTimeDiff<
   GTimeDiffChrono_::Timer
 > GTimeDiffChrono;
 
-std::ostream& operator << (std::ostream& os, std::chrono::high_resolution_clock::duration& rhs) {
+static std::ostream& operator << (std::ostream& os, std::chrono::high_resolution_clock::duration& rhs) {
   os << rhs.count();
   return os;
 }
