@@ -63,11 +63,12 @@ TEST(GTimeDiff, getTickCountTest) {
 }
 #endif // WIN32
 
+#ifdef __GNUC__
 #include "gtimediffgettimeofday.h"
-
 TEST(GTimeDiff, getTimeOfDayTest) {
   MyTest<GTimeDiffGetTimeOfDay>();
 }
+#endif // __GNUC__
 
 #include "gtimediffnull.h"
 TEST(GTimeDiff, nullTest) {
