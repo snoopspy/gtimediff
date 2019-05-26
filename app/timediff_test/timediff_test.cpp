@@ -56,12 +56,12 @@ TEST(GTimeDiff, elapsedTimerTest) {
   MyTest<GTimeDiffElapsedTimer>();
 }
 
-#ifdef _WIN32
+#ifdef WIN32
 #include "gtimediffgettickcount.h"
 TEST(GTimeDiff, getTickCountTest) {
   MyTest<GTimeDiffGetTickCount>();
 }
-#endif // _WIN32
+#endif // WIN32
 
 #include "gtimediffgettimeofday.h"
 
@@ -74,12 +74,12 @@ TEST(GTimeDiff, nullTest) {
   MyTest<GTimeDiffNull>();
 }
 
-#ifdef _WIN32
+#ifdef WIN32
 #include "gtimedifftimegettime.h"
 
 TEST(GTimeDiff, TimeGetTimeTest) {
   MyTest<GTimeDiffTimeGetTime>();
 }
-#endif // _WIN32
+#endif // WIN32
 
 #endif // GTEST

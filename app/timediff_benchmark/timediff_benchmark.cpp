@@ -29,7 +29,7 @@ void timegettime_msec_test() {
 }
 #endif // WIN32
 
-#ifdef __GNUC__
+#ifdef linux
 // ----------------------------------------------------------------------------
 // gnuc
 // ----------------------------------------------------------------------------
@@ -80,7 +80,7 @@ void clock_gettime_nsec_test() {
   }
   std::cout << diff / 1000000 << "\t" << __func__ << std::endl;
 }
-#endif // __GNUC__
+#endif // linux
 
 // ----------------------------------------------------------------------------
 // c++11
@@ -231,7 +231,7 @@ int main() {
   timegettime_msec_test();
 #endif // WIN32
 
-#ifdef __GNUC__
+#ifdef linux
   //
   // gnuc
   //
@@ -239,7 +239,7 @@ int main() {
   time_sec_test();
   gettimeofday_usec_test();
   clock_gettime_nsec_test();
-#endif
+#endif // linux
 
   //
   // c++11
