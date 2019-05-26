@@ -2,7 +2,7 @@
 
 static const int LOOP_CNT = 1000000;
 
-#ifdef _WIN32
+#ifdef WIN32
 
 #include <windows.h>
 void gettickcount_msec_test() {
@@ -27,7 +27,7 @@ void timegettime_msec_test() {
   }
   std::cout << diff << "\t" << __func__ << std::endl;
 }
-#endif // _WIN32
+#endif // WIN32
 
 #ifdef __GNUC__
 // ----------------------------------------------------------------------------
