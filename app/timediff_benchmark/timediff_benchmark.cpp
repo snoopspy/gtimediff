@@ -20,7 +20,7 @@ void gettickcount_msec_test() {
 void timegettime_msec_test() {
   DWORD beg = timeGetTime();
   DWORD end;
-  DWORD diff;
+  DWORD diff = 0;
   for (int i = 0; i < LOOP_CNT; i++) {
     end = timeGetTime();
     diff = end - beg;
