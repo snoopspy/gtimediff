@@ -1,6 +1,6 @@
 #include <chrono>
 #include <thread>
-#include <GTimeDiffChrono>
+#include <gtimediffchrono.h>
 
 int main() {
   GTimeDiffChrono td(__LINE__);

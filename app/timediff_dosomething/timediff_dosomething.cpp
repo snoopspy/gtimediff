@@ -1,6 +1,6 @@
 #include <chrono>
 #include <thread>
-#include <GTimeDiffChrono>
+#include <gtimediffchrono.h>
 
 void doSomething(int msec) {
   std::this_thread::sleep_for(std::chrono::milliseconds(msec));

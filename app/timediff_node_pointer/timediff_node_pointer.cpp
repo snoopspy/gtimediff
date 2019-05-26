@@ -1,5 +1,5 @@
 #include <iostream>
-#include <GTimeDiffChrono>
+#include <gtimediffchrono.h>
 
 struct Node {
   Node(int value = 0) { this->value = value; }
