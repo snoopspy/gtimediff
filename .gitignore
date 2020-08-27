@@ -5,6 +5,7 @@ bin/
 *.bak
 *.o
 *.pro.user
+*.qmake.stash
 *.so
 Makefile
 Makefile.*
