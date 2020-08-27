@@ -26,10 +26,10 @@ void doSomething(int msec) {
 
 int main() {
   for (int i = 0; i < 10; i++) {
-    doSomething(1111);
-    doSomething(1001);
-    doSomething(1002);
-    doSomething(4000);
+    doSomething(10);
+    doSomething(20);
+    doSomething(30);
+    doSomething(40);
   }
 }
 ```
