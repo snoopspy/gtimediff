@@ -1,18 +1,14 @@
-G Time Diff Library
+GTimeDiff Library
 ======================================
 
 # About
-* GTimeDiff is a simple and robust template based time difference measurement library for C++.
+* GTimeDiff is a simple and robust time difference measurement library for C++.
 
-# Install
-* GTimeDiff consists of only header files, and it requires no library build for using.
-    * For Qt user(based on **QElapsedTimer**)
-      * Include **gtimediff.pri**.
-    * For None Qt user(based on **chrono**)
-      * Just include and use header files in src folder.
+# How to use
+* Just include <b>gtimediff.h</b> header file.
 
-# Examples
-* See the following code. Suppose that it contains a critical routine that consumes too much time. You don't know which function is time comsuming. Anyway, you would like to figure out how long it takes time in each routine. In this case, GTimeDiff is a good solution for the problem.
+# Sample
+* See the following code. Suppose that it contains a critical routine that consumes too much time. You don't know which function is time consuming. Anyway, you would like to figure out how long it takes time in each routine. In this case, GTimeDiff is a good solution for the problem.
 
 ```cpp
   doSometing1();
@@ -24,8 +20,7 @@ G Time Diff Library
 * Original code.
 
 ```cpp
-void doSomething(int msec)
-{
+void doSomething(int msec) {
   std::this_thread::sleep_for(std::chrono::milliseconds(msec));
 }
 
@@ -33,10 +28,10 @@ int main()
 {
   for (int i = 0; i < 10; i++)
   {
-    doSomething(10);
-    doSomething(20);
-    doSomething(30);
-    doSomething(40);
+    doSomething(1111);
+    doSomething(1001);
+    doSomething(1002);
+    doSomething(4000);
   }
 }
 ```
@@ -44,18 +39,16 @@ int main()
 * Let me add a code using **GTimeDiff** module.
 
 ```cpp
-#include <gtimediffchrono.h> // Add header file
+#include <gtimediff.h> // Add header file
 
-void doSomething(int msec)
-{
+void doSomething(int msec) {
   std::this_thread::sleep_for(std::chrono::milliseconds(msec));
 }
 
 int main()
 {
   GTimeDiff td; // Declare object of the class
-  for (int i = 0; i < 10; i++)
-  {
+  for (int i = 0; i < 10; i++) {
     td.check(1111); // Call check everywhere you would like to check time consuming
     doSomething(10);
     td.check(2222);
@@ -69,25 +62,20 @@ int main()
 }
 ```
 
-* The result. You get count, elapsed and average time information(nano-second) where check function is called.
-  
+* The result. You get count, elapsed and average time information where check function is called.
+
 ```
-beg     end     count   elapsed      average
-1111    2222    10      101,155,750  10,115,575
-2222    3333    10      201,018,290  20,101,829
-3333    4444    10      301,024,734  30,102,473
-4444    1111    9       360,927,856  40,103,095
+beg             end             count           elapsed         average                                           
+1111            2222            10              101             10                                                
+2222            3333            10              201             20                                                
+3333            4444            10              301             30                                                
+4444            1111            9               361             40  
 ```
 
-* For more information, see [app](app/) codes.
-
-# Supported Platforms
-  * Linux / g++ 4.8.4
-  * Windows / mingw 4.9.1
+* For more information, see [sample](sample/) code.
 
 # Author
-* [Gilbert Lee](http://www.gilgil.net)
+* [Gilbert Lee](http://gilgil.net)
 
 # License
 * [GNU GENERAL PUBLIC LICENSE](http://www.gnu.org/copyleft/gpl.html)
-
