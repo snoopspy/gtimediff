@@ -24,10 +24,8 @@ void doSomething(int msec) {
   std::this_thread::sleep_for(std::chrono::milliseconds(msec));
 }
 
-int main()
-{
-  for (int i = 0; i < 10; i++)
-  {
+int main() {
+  for (int i = 0; i < 10; i++) {
     doSomething(1111);
     doSomething(1001);
     doSomething(1002);
@@ -45,8 +43,7 @@ void doSomething(int msec) {
   std::this_thread::sleep_for(std::chrono::milliseconds(msec));
 }
 
-int main()
-{
+int main() {
   GTimeDiff td; // Declare object of the class
   for (int i = 0; i < 10; i++) {
     td.check(1111); // Call check everywhere you would like to check time consuming
