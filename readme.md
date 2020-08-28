@@ -2,10 +2,10 @@ GTimeDiff Library
 ======================================
 
 ## About
-* GTimeDiff is a simple and robust time difference measurement library for C++.
+* GTimeDiff is a simple and efficient time difference measurement library for C++.
 
 ## How to use
-* Just include <b>gtimediff.h</b> header file.
+* Simple. Just include <b>gtimediff.h</b> header file in your project.
 
 ## Sample
 * See the following code. Suppose that it contains a critical routine that consumes too much time. You don't know which function is time consuming. Anyway, you would like to figure out how long it takes time in each routine. In this case, GTimeDiff is a good solution for the problem.
