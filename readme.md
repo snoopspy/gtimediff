@@ -40,7 +40,7 @@ int main() {
 #include <gtimediff.h> // Add header file
 
 void doSomething(int msec) {
-  std::this_thread::sleep_for(std::chrono::milliseconds(msec));
+  this_thread::sleep_for(chrono::milliseconds(msec));
 }
 
 int main() {
