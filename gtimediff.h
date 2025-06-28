@@ -52,12 +52,11 @@ public:
 	ReportMap reportMap_;
 	Milestone lastMilestone_;
 	Clock lastClock_;
+	int div_;
 
 public:
-	GTimeDiff(Milestone startMilestone = 0) {
+	GTimeDiff(int div = 1000000) : div_(div) {
 		clear();
-		if (startMilestone != 0)
-			check(startMilestone);
 	}
 
 	virtual ~GTimeDiff() {
@@ -88,7 +87,7 @@ public:
 		lastClock_ = now;
 	}
 
-	virtual void report(int div = 1000000, bool autoClear = true, std::ostream* os = nullptr) {
+	virtual void report(bool autoClear = true, std::ostream* os = nullptr) {
 		if (os == nullptr) os = &std::cout;
 		*os << "beg\t\tend\t\tcount\t\telapsed\t\taverage\n";
 		for (auto it = reportMap_.begin(); it != reportMap_.end(); it++) {
@@ -96,7 +95,7 @@ public:
 			if (key.from_ == 0) continue;
 			Data data = it->second;
 			assert(data.count_ != 0);
-			Diff elapsed = data.totalElapsed_ / div;
+			Diff elapsed = data.totalElapsed_ / div_;
 			Diff avg = elapsed / data.count_;
 			*os << key.from_
 				<< "\t\t" << key.to_
